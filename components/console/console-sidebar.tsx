@@ -1,17 +1,14 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import {
   BarChart3,
   Brain,
   LayoutDashboard,
-  LifeBuoy,
   MessagesSquare,
   Plug,
   Plus,
   Puzzle,
-  Settings,
   ShieldCheck,
   Sparkles,
   Workflow,
@@ -19,14 +16,20 @@ import {
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-import { Link, usePathname } from "@/i18n/navigation";
+import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
-import { SidebarToggle, type SidebarMode } from "./shared/sidebar-toggle";
+import { SidebarToggle, type SidebarMode } from "./shared";
 
 type NavItem = {
   href: string;
   key: string;
   icon: LucideIcon;
+};
+
+// Default landing page for each mode.
+const modeHome: Record<SidebarMode, string> = {
+  chat: "/console/chat/new",
+  lab: "/console/lab/overview",
 };
 
 const chatItems: NavItem[] = [
@@ -43,26 +46,30 @@ const labItems: NavItem[] = [
   { href: "/console/lab/compliance", key: "compliance", icon: ShieldCheck },
   { href: "/console/lab/workflows", key: "workflows", icon: Workflow },
   { href: "/console/lab/reports", key: "reports", icon: BarChart3 },
-  { href: "/console/help", key: "help", icon: LifeBuoy },
-  { href: "/console/settings", key: "settings", icon: Settings },
 ];
 
 export function ConsoleSidebar() {
   const tApp = useTranslations("App");
   const pathname = usePathname();
+  const router = useRouter();
 
-  // Initialize mode from the current route, then let the toggle control it
-  // locally (switching in place, no navigation).
-  const initialMode: SidebarMode =
+  // Mode is derived from the current route.
+  const mode: SidebarMode =
     pathname === "/console/lab" || pathname.startsWith("/console/lab/")
       ? "lab"
       : "chat";
-  const [mode, setMode] = useState<SidebarMode>(initialMode);
 
   const items = mode === "lab" ? labItems : chatItems;
   const t = useTranslations(
     mode === "lab" ? "Console.lab.nav" : "Console.chat.nav"
   );
+
+  // Switching mode navigates to that mode's default page.
+  const handleModeChange = (next: SidebarMode) => {
+    if (next !== mode) {
+      router.push(modeHome[next]);
+    }
+  };
 
   return (
     <aside className="hidden w-56 shrink-0 flex-col border-r bg-background md:flex">
@@ -84,7 +91,7 @@ export function ConsoleSidebar() {
       </div>
 
       <div className="p-3 pb-0">
-        <SidebarToggle mode={mode} onChange={setMode} />
+        <SidebarToggle mode={mode} onChange={handleModeChange} />
       </div>
 
       <nav className="flex flex-col gap-1 p-3">
