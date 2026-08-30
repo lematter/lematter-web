@@ -4,7 +4,7 @@ Guidance for AI agents and human contributors working in this repository.
 
 ## Project overview
 
-lematter-web is a Next.js 16 (App Router) application using TypeScript,
+Lematter-web is a Next.js 16 (App Router) application using TypeScript,
 Tailwind CSS v4, shadcn/ui, lucide-react, and next-intl for
 internationalization.
 

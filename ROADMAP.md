@@ -1,6 +1,6 @@
 ﻿# Roadmap
 
-This roadmap outlines the planned direction for lematter-web. It is a living
+This roadmap outlines the planned direction for Lematter-web. It is a living
 document and priorities may shift. Items are grouped by horizon rather than
 hard dates.
 

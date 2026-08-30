@@ -1,4 +1,4 @@
-# lematter-web
+# Lematter-web
 
 A modern web application built with Next.js 16 (App Router), internationalized with next-intl, and styled with Tailwind CSS v4 and shadcn/ui.
 

@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 
-export default function HelpPage() {
-  const t = useTranslations("Console.help");
+export default function LabPage() {
+  const t = useTranslations("Console.lab");
 
   return (
     <div className="flex flex-col gap-1">

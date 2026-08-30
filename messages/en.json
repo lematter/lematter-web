@@ -6,13 +6,13 @@
     "documentation": "Documentation"
   },
   "App": {
-    "brand": "lematter",
+    "brand": "Lematter",
     "nav": {
       "login": "Log in",
       "signup": "Sign up"
     },
     "footer": {
-      "copyright": "© {year} lematter. All rights reserved.",
+      "copyright": "© {year} Lematter. All rights reserved.",
       "terms": "Terms",
       "privacy": "Privacy",
       "cookies": "Cookies"
@@ -22,38 +22,22 @@
     "title": "Console",
     "signOut": "Sign out",
     "nav": {
+      "chat": "Chat",
+      "lab": "Lab",
       "help": "Help",
       "settings": "Settings"
     },
+    "chat": {
+      "title": "Chat"
+    },
+    "lab": {
+      "title": "Lab"
+    },
     "settings": {
-      "title": "Settings",
-      "description": "Manage your account and preferences.",
-      "profile": {
-        "title": "Profile",
-        "description": "Update your personal information.",
-        "name": "Full name",
-        "email": "Email",
-        "save": "Save changes"
-      }
+      "title": "Settings"
     },
     "help": {
-      "title": "Help center",
-      "description": "Find answers and get support.",
-      "topics": {
-        "gettingStarted": {
-          "title": "Getting started",
-          "body": "Learn the basics and set up your account."
-        },
-        "account": {
-          "title": "Account",
-          "body": "Manage your profile, security, and preferences."
-        },
-        "billing": {
-          "title": "Billing",
-          "body": "View invoices and manage your subscription."
-        }
-      },
-      "contact": "Still need help? Reach out to our support team and we'll get back to you."
+      "title": "Help"
     }
   },
   "Auth": {
@@ -105,7 +89,7 @@
     "terms": {
       "title": "Terms of Service",
       "updated": "Last updated: August 30, 2026",
-      "intro": "These Terms of Service govern your access to and use of lematter. By using the service, you agree to be bound by these terms.",
+      "intro": "These Terms of Service govern your access to and use of Lematter. By using the service, you agree to be bound by these terms.",
       "s1Title": "Acceptance of terms",
       "s1Body": "By accessing or using the service, you confirm that you can form a binding contract and that you accept these terms and agree to comply with them.",
       "s2Title": "Use of the service",
@@ -116,7 +100,7 @@
     "privacy": {
       "title": "Privacy Policy",
       "updated": "Last updated: August 30, 2026",
-      "intro": "This Privacy Policy explains how we collect, use, and protect your information when you use lematter.",
+      "intro": "This Privacy Policy explains how we collect, use, and protect your information when you use Lematter.",
       "s1Title": "Information we collect",
       "s1Body": "We collect information you provide directly, such as your name and email address, as well as usage data generated as you interact with the service.",
       "s2Title": "How we use information",
@@ -127,7 +111,7 @@
     "cookies": {
       "title": "Cookie Policy",
       "updated": "Last updated: August 30, 2026",
-      "intro": "This Cookie Policy explains how lematter uses cookies and similar technologies to recognize you when you visit.",
+      "intro": "This Cookie Policy explains how Lematter uses cookies and similar technologies to recognize you when you visit.",
       "s1Title": "What are cookies",
       "s1Body": "Cookies are small data files placed on your device that help websites work and provide reporting information.",
       "s2Title": "How we use cookies",

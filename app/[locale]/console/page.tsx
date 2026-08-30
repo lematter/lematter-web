@@ -4,5 +4,5 @@ export default async function ConsoleIndexPage({
   params,
 }: PageProps<"/[locale]/console">) {
   const { locale } = await params;
-  redirect({ href: "/console/help", locale });
+  redirect({ href: "/console/chat", locale });
 }
