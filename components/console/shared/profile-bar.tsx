@@ -41,12 +41,12 @@ export function ProfileBar({ collapsed = false }: { collapsed?: boolean }) {
   const t = useTranslations("Console.profile");
 
   return (
-    <div className="mt-auto border-t p-3">
+    <div className="mt-auto border-t">
       <Popover>
         <PopoverTrigger
           className={cn(
-            "flex w-full items-center rounded-lg text-left outline-none transition-colors hover:bg-muted/60",
-            collapsed ? "justify-center p-1.5" : "gap-3 p-2"
+            "flex w-full items-center text-left outline-none transition-colors hover:bg-muted/60",
+            collapsed ? "justify-center p-3" : "gap-3 p-4"
           )}
         >
           <Avatar size="sm">
@@ -67,7 +67,8 @@ export function ProfileBar({ collapsed = false }: { collapsed?: boolean }) {
         <PopoverContent
           side={collapsed ? "right" : "top"}
           align="start"
-          className="w-56 p-1"
+          sideOffset={12}
+          className="w-52 p-1"
         >
           <div className="flex items-center gap-3 p-2">
             <Avatar size="sm">
