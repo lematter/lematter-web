@@ -5,6 +5,8 @@ import Image from "next/image";
 import {
   BarChart3,
   Brain,
+  FileText,
+  FolderKanban,
   LayoutDashboard,
   MessagesSquare,
   PanelLeftClose,
@@ -51,6 +53,12 @@ const labItems: NavItem[] = [
   { href: "/console/lab/reports", key: "reports", icon: BarChart3 },
 ];
 
+// Shared nav shown in both modes.
+const sharedItems: NavItem[] = [
+  { href: "/console/projects", key: "projects", icon: FolderKanban },
+  { href: "/console/files", key: "files", icon: FileText },
+];
+
 export function ConsoleSidebar() {
   const tApp = useTranslations("App");
   const pathname = usePathname();
@@ -82,6 +90,7 @@ export function ConsoleSidebar() {
   const t = useTranslations(
     mode === "lab" ? "Console.lab.nav" : "Console.chat.nav"
   );
+  const tShared = useTranslations("Console.nav");
 
   // Switching mode navigates to that mode's default page.
   const handleModeChange = (next: SidebarMode) => {
@@ -161,6 +170,32 @@ export function ConsoleSidebar() {
             >
               <Icon className="size-5" />
               {!collapsed && t(key)}
+            </Link>
+          );
+        })}
+
+        <div className="my-2 h-px bg-border" />
+
+        {sharedItems.map(({ href, key, icon: Icon }) => {
+          const active = pathname === href || pathname.startsWith(`${href}/`);
+          return (
+            <Link
+              key={href}
+              href={href}
+              aria-current={active ? "page" : undefined}
+              title={collapsed ? tShared(key) : undefined}
+              className={cn(
+                "flex items-center rounded-lg text-base font-medium transition-colors",
+                collapsed
+                  ? "justify-center px-2 py-2.5"
+                  : "gap-3 px-3 py-2.5",
+                active
+                  ? "text-primary"
+                  : "text-muted-foreground hover:bg-muted/60 hover:text-foreground"
+              )}
+            >
+              <Icon className="size-5" />
+              {!collapsed && tShared(key)}
             </Link>
           );
         })}
