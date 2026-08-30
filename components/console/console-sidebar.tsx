@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import {
   BarChart3,
@@ -57,11 +57,26 @@ export function ConsoleSidebar() {
   const router = useRouter();
   const [collapsed, setCollapsed] = useState(false);
 
-  // Mode is derived from the current route.
-  const mode: SidebarMode =
-    pathname === "/console/lab" || pathname.startsWith("/console/lab/")
-      ? "lab"
-      : "chat";
+  // Which mode a path belongs to. Shared pages (settings, help, etc.) return
+  // null so the sidebar keeps whatever mode was already active.
+  const routeMode = (path: string): SidebarMode | null => {
+    if (path === "/console/lab" || path.startsWith("/console/lab/")) return "lab";
+    if (path === "/console/chat" || path.startsWith("/console/chat/")) return "chat";
+    return null;
+  };
+
+  // Mode is remembered; it only changes when navigating to a chat or lab page.
+  const [mode, setMode] = useState<SidebarMode>(
+    () => routeMode(pathname) ?? "chat"
+  );
+
+  useEffect(() => {
+    const next = routeMode(pathname);
+    if (next && next !== mode) {
+      setMode(next);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pathname]);
 
   const items = mode === "lab" ? labItems : chatItems;
   const t = useTranslations(

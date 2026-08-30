@@ -26,9 +26,11 @@
       "lab": "Lab"
     },
     "profile": {
+      "title": "Profile",
       "settings": "Settings",
       "help": "Help",
-      "signOut": "Sign out"
+      "documentation": "Documentation",
+      "logout": "Logout"
     },
     "nav": {
       "settings": "Settings"
