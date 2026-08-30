@@ -1,11 +1,14 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import {
   BarChart3,
   Brain,
   LayoutDashboard,
   MessagesSquare,
+  PanelLeftClose,
+  PanelLeftOpen,
   Plug,
   Plus,
   Puzzle,
@@ -52,6 +55,7 @@ export function ConsoleSidebar() {
   const tApp = useTranslations("App");
   const pathname = usePathname();
   const router = useRouter();
+  const [collapsed, setCollapsed] = useState(false);
 
   // Mode is derived from the current route.
   const mode: SidebarMode =
@@ -72,27 +76,54 @@ export function ConsoleSidebar() {
   };
 
   return (
-    <aside className="hidden w-56 shrink-0 flex-col border-r bg-background md:flex">
-      <div className="flex h-14 shrink-0 items-center border-b px-4">
-        <Link
-          href="/console"
-          className="flex items-center gap-2 font-heading text-base font-semibold"
+    <aside
+      className={cn(
+        "hidden shrink-0 flex-col border-r bg-background transition-[width] md:flex",
+        collapsed ? "w-16" : "w-56"
+      )}
+    >
+      <div
+        className={cn(
+          "flex h-14 shrink-0 items-center border-b",
+          collapsed ? "justify-center px-2" : "justify-between px-4"
+        )}
+      >
+        {!collapsed && (
+          <Link
+            href="/console"
+            className="flex items-center gap-2 font-heading text-base font-semibold"
+          >
+            <Image
+              src="/icons/app/dark.png"
+              alt={tApp("brand")}
+              width={24}
+              height={24}
+              className="size-6"
+              priority
+            />
+            {tApp("brand")}
+          </Link>
+        )}
+        <button
+          type="button"
+          onClick={() => setCollapsed((c) => !c)}
+          aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
+          aria-expanded={!collapsed}
+          className="flex size-8 items-center justify-center rounded-lg text-muted-foreground transition-colors outline-none hover:bg-muted/60 hover:text-foreground"
         >
-          <Image
-            src="/icons/app/dark.png"
-            alt={tApp("brand")}
-            width={24}
-            height={24}
-            className="size-6"
-            priority
-          />
-          {tApp("brand")}
-        </Link>
+          {collapsed ? (
+            <PanelLeftOpen className="size-5" />
+          ) : (
+            <PanelLeftClose className="size-5" />
+          )}
+        </button>
       </div>
 
-      <div className="p-3 pb-0">
-        <SidebarToggle mode={mode} onChange={handleModeChange} />
-      </div>
+      {!collapsed && (
+        <div className="p-3 pb-0">
+          <SidebarToggle mode={mode} onChange={handleModeChange} />
+        </div>
+      )}
 
       <nav className="flex flex-col gap-1 p-3">
         {items.map(({ href, key, icon: Icon }) => {
@@ -102,15 +133,19 @@ export function ConsoleSidebar() {
               key={href}
               href={href}
               aria-current={active ? "page" : undefined}
+              title={collapsed ? t(key) : undefined}
               className={cn(
-                "flex items-center gap-3 rounded-lg px-3 py-2.5 text-base font-medium transition-colors",
+                "flex items-center rounded-lg text-base font-medium transition-colors",
+                collapsed
+                  ? "justify-center px-2 py-2.5"
+                  : "gap-3 px-3 py-2.5",
                 active
                   ? "text-primary"
                   : "text-muted-foreground hover:bg-muted/60 hover:text-foreground"
               )}
             >
               <Icon className="size-5" />
-              {t(key)}
+              {!collapsed && t(key)}
             </Link>
           );
         })}
