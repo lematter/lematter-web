@@ -26,9 +26,6 @@
       "lab": "Lab mode"
     },
     "nav": {
-      "chat": "Chat",
-      "lab": "Lab",
-      "help": "Help",
       "settings": "Settings"
     },
     "chat": {
@@ -61,7 +58,27 @@
       }
     },
     "lab": {
-      "title": "Lab"
+      "title": "Lab",
+      "nav": {
+        "overview": "Overview",
+        "compliance": "Compliance",
+        "workflows": "Workflows",
+        "reports": "Reports",
+        "help": "Help",
+        "settings": "Settings"
+      },
+      "overview": {
+        "title": "Overview"
+      },
+      "compliance": {
+        "title": "Compliance"
+      },
+      "workflows": {
+        "title": "Workflows"
+      },
+      "reports": {
+        "title": "Reports"
+      }
     },
     "settings": {
       "title": "Settings"

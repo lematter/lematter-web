@@ -1,20 +1,31 @@
 "use client";
 
 import Image from "next/image";
-import { FlaskConical, LifeBuoy, MessageSquare, Settings } from "lucide-react";
+import {
+  BarChart3,
+  LayoutDashboard,
+  LifeBuoy,
+  MessageSquare,
+  Settings,
+  ShieldCheck,
+  Workflow,
+} from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { Link, usePathname } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
 const items = [
-  { href: "/console/lab", key: "lab", icon: FlaskConical },
+  { href: "/console/lab/overview", key: "overview", icon: LayoutDashboard },
+  { href: "/console/lab/compliance", key: "compliance", icon: ShieldCheck },
+  { href: "/console/lab/workflows", key: "workflows", icon: Workflow },
+  { href: "/console/lab/reports", key: "reports", icon: BarChart3 },
   { href: "/console/help", key: "help", icon: LifeBuoy },
   { href: "/console/settings", key: "settings", icon: Settings },
 ] as const;
 
 export function LabSidebar() {
-  const t = useTranslations("Console.nav");
+  const t = useTranslations("Console.lab.nav");
   const tMode = useTranslations("Console.mode");
   const tApp = useTranslations("App");
   const pathname = usePathname();
