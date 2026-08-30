@@ -1,0 +1,139 @@
+{
+  "HomePage": {
+    "getStarted": "To get started, edit the <file>page.tsx</file> file.",
+    "instructionsLead": "Looking for a starting point or more instructions? Head over to <templates>Templates</templates> or the <learning>Learning</learning> center.",
+    "deployNow": "Deploy Now",
+    "documentation": "Documentation"
+  },
+  "App": {
+    "brand": "lematter",
+    "nav": {
+      "login": "Log in",
+      "signup": "Sign up"
+    },
+    "footer": {
+      "copyright": "© {year} lematter. All rights reserved.",
+      "terms": "Terms",
+      "privacy": "Privacy",
+      "cookies": "Cookies"
+    }
+  },
+  "Console": {
+    "title": "Console",
+    "signOut": "Sign out",
+    "nav": {
+      "help": "Help",
+      "settings": "Settings"
+    },
+    "settings": {
+      "title": "Settings",
+      "description": "Manage your account and preferences.",
+      "profile": {
+        "title": "Profile",
+        "description": "Update your personal information.",
+        "name": "Full name",
+        "email": "Email",
+        "save": "Save changes"
+      }
+    },
+    "help": {
+      "title": "Help center",
+      "description": "Find answers and get support.",
+      "topics": {
+        "gettingStarted": {
+          "title": "Getting started",
+          "body": "Learn the basics and set up your account."
+        },
+        "account": {
+          "title": "Account",
+          "body": "Manage your profile, security, and preferences."
+        },
+        "billing": {
+          "title": "Billing",
+          "body": "View invoices and manage your subscription."
+        }
+      },
+      "contact": "Still need help? Reach out to our support team and we'll get back to you."
+    }
+  },
+  "Auth": {
+    "login": {
+      "title": "Welcome back",
+      "description": "Log in to your account to continue.",
+      "email": "Email",
+      "password": "Password",
+      "forgotLink": "Forgot password?",
+      "submit": "Log in",
+      "noAccount": "Don't have an account?",
+      "signupLink": "Sign up"
+    },
+    "signup": {
+      "title": "Create your account",
+      "description": "Sign up to get started.",
+      "name": "Full name",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Create account",
+      "haveAccount": "Already have an account?",
+      "loginLink": "Log in"
+    },
+    "forgot": {
+      "title": "Forgot password",
+      "description": "Enter your email and we'll send you a reset link.",
+      "email": "Email",
+      "submit": "Send reset link",
+      "backToLogin": "Back to log in"
+    },
+    "reset": {
+      "title": "Reset password",
+      "description": "Choose a new password for your account.",
+      "password": "New password",
+      "confirm": "Confirm password",
+      "submit": "Reset password",
+      "backToLogin": "Back to log in"
+    },
+    "verify": {
+      "title": "Verify your email",
+      "description": "Enter the 6-digit code we sent to your email.",
+      "code": "Verification code",
+      "submit": "Verify",
+      "noCode": "Didn't get a code?",
+      "resend": "Resend"
+    }
+  },
+  "Legal": {
+    "terms": {
+      "title": "Terms of Service",
+      "updated": "Last updated: August 30, 2026",
+      "intro": "These Terms of Service govern your access to and use of lematter. By using the service, you agree to be bound by these terms.",
+      "s1Title": "Acceptance of terms",
+      "s1Body": "By accessing or using the service, you confirm that you can form a binding contract and that you accept these terms and agree to comply with them.",
+      "s2Title": "Use of the service",
+      "s2Body": "You agree to use the service only for lawful purposes and in accordance with these terms. You are responsible for any activity that occurs under your account.",
+      "s3Title": "Changes to these terms",
+      "s3Body": "We may revise these terms from time to time. The most current version will always be posted on this page, and continued use constitutes acceptance of the changes."
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "updated": "Last updated: August 30, 2026",
+      "intro": "This Privacy Policy explains how we collect, use, and protect your information when you use lematter.",
+      "s1Title": "Information we collect",
+      "s1Body": "We collect information you provide directly, such as your name and email address, as well as usage data generated as you interact with the service.",
+      "s2Title": "How we use information",
+      "s2Body": "We use the information we collect to provide, maintain, and improve the service, to communicate with you, and to keep the service secure.",
+      "s3Title": "Your rights",
+      "s3Body": "You may request access to, correction of, or deletion of your personal data at any time by contacting us."
+    },
+    "cookies": {
+      "title": "Cookie Policy",
+      "updated": "Last updated: August 30, 2026",
+      "intro": "This Cookie Policy explains how lematter uses cookies and similar technologies to recognize you when you visit.",
+      "s1Title": "What are cookies",
+      "s1Body": "Cookies are small data files placed on your device that help websites work and provide reporting information.",
+      "s2Title": "How we use cookies",
+      "s2Body": "We use essential cookies to operate the service and optional cookies to understand usage and improve your experience.",
+      "s3Title": "Managing cookies",
+      "s3Body": "You can control and delete cookies through your browser settings. Disabling some cookies may affect how the service functions."
+    }
+  }
+}
