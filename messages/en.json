@@ -22,8 +22,8 @@
     "title": "Console",
     "signOut": "Sign out",
     "mode": {
-      "chat": "Chat mode",
-      "lab": "Lab mode"
+      "chat": "Chat",
+      "lab": "Lab"
     },
     "nav": {
       "settings": "Settings"

@@ -1,3 +1,4 @@
 export { ConsoleLayout } from "./console-layout";
 export { ConsoleHeader } from "./console-header";
-export { ChatSidebar, LabSidebar } from "./shared";
+export { ConsoleSidebar } from "./console-sidebar";
+export { SidebarToggle } from "./shared/sidebar-toggle";
