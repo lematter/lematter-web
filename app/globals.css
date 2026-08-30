@@ -74,7 +74,7 @@
   --chart-3: oklch(0.439 0 0);
   --chart-4: oklch(0.371 0 0);
   --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
+  --radius: 0; /* Flat design 2.0 — no curves */
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: oklch(0.205 0 0);
@@ -97,5 +97,13 @@
   }
   html {
     @apply font-sans;
+  }
+  /* Flat design 2.0: remove all curves globally, including utilities that
+     hard-code rounded-* / rounded-full and don't derive from --radius.
+     Applies to elements and their ::before/::after pseudo-elements. */
+  *,
+  *::before,
+  *::after {
+    border-radius: 0 !important;
   }
 }

@@ -12,9 +12,12 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
+import { PasswordInput } from "@/components/ui/password-input";
 
 export default function LoginPage() {
   const t = useTranslations("Auth.login");
+  const tc = useTranslations("Auth.common");
 
   return (
     <Card>
@@ -44,12 +47,19 @@ export default function LoginPage() {
                 {t("forgotLink")}
               </Link>
             </div>
-            <Input
+            <PasswordInput
               id="password"
-              type="password"
               autoComplete="current-password"
               required
+              showLabel={tc("showPassword")}
+              hideLabel={tc("hidePassword")}
             />
+          </div>
+          <div className="flex items-center gap-2">
+            <Checkbox id="remember" name="remember" />
+            <Label htmlFor="remember" className="font-normal text-muted-foreground">
+              {t("rememberMe")}
+            </Label>
           </div>
           <Button type="submit" size="lg" className="w-full">
             {t("submit")}

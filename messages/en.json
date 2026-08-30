@@ -41,12 +41,17 @@
     }
   },
   "Auth": {
+    "common": {
+      "showPassword": "Show password",
+      "hidePassword": "Hide password"
+    },
     "login": {
       "title": "Welcome back",
       "description": "Log in to your account to continue.",
       "email": "Email",
       "password": "Password",
       "forgotLink": "Forgot password?",
+      "rememberMe": "Remember me",
       "submit": "Log in",
       "noAccount": "Don't have an account?",
       "signupLink": "Sign up"
@@ -58,6 +63,7 @@
       "email": "Email",
       "password": "Password",
       "submit": "Create account",
+      "acceptTerms": "I agree to the <terms>Terms</terms> and <privacy>Privacy</privacy>.",
       "haveAccount": "Already have an account?",
       "loginLink": "Log in"
     },

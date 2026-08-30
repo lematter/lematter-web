@@ -12,9 +12,12 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
+import { PasswordInput } from "@/components/ui/password-input";
 
 export default function SignupPage() {
   const t = useTranslations("Auth.signup");
+  const tc = useTranslations("Auth.common");
 
   return (
     <Card>
@@ -40,12 +43,39 @@ export default function SignupPage() {
           </div>
           <div className="flex flex-col gap-2">
             <Label htmlFor="password">{t("password")}</Label>
-            <Input
+            <PasswordInput
               id="password"
-              type="password"
               autoComplete="new-password"
               required
+              showLabel={tc("showPassword")}
+              hideLabel={tc("hidePassword")}
             />
+          </div>
+          <div className="flex items-start gap-2">
+            <Checkbox id="terms" name="terms" required className="mt-0.5" />
+            <Label
+              htmlFor="terms"
+              className="font-normal leading-snug text-muted-foreground"
+            >
+              {t.rich("acceptTerms", {
+                terms: (chunks) => (
+                  <Link
+                    href="/legal/terms"
+                    className="font-medium text-foreground hover:underline"
+                  >
+                    {chunks}
+                  </Link>
+                ),
+                privacy: (chunks) => (
+                  <Link
+                    href="/legal/privacy"
+                    className="font-medium text-foreground hover:underline"
+                  >
+                    {chunks}
+                  </Link>
+                ),
+              })}
+            </Label>
           </div>
           <Button type="submit" size="lg" className="w-full">
             {t("submit")}

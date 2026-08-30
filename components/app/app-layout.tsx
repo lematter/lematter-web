@@ -5,7 +5,7 @@ import { AppFooter } from "./app-footer";
 
 export function AppLayout({ children }: { children: ReactNode }) {
   return (
-    <div className="flex min-h-full flex-col">
+    <div className="flex min-h-screen flex-col">
       <AppHeader />
       <main className="flex flex-1 flex-col">{children}</main>
       <AppFooter />

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { useTranslations } from "next-intl";
 
 import { Link } from "@/i18n/navigation";
@@ -14,13 +13,11 @@ export function AppHeader() {
           href="/"
           className="flex items-center gap-2 font-heading text-base font-semibold"
         >
-          <Image
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
             src="/icons/app/dark.png"
             alt={t("brand")}
-            width={24}
-            height={24}
-            className="size-6"
-            priority
+            className="size-6 object-contain"
           />
           {t("brand")}
         </Link>

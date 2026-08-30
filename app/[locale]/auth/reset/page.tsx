@@ -10,11 +10,12 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { PasswordInput } from "@/components/ui/password-input";
 
 export default function ResetPasswordPage() {
   const t = useTranslations("Auth.reset");
+  const tc = useTranslations("Auth.common");
 
   return (
     <Card>
@@ -26,20 +27,22 @@ export default function ResetPasswordPage() {
         <form className="flex flex-col gap-4">
           <div className="flex flex-col gap-2">
             <Label htmlFor="password">{t("password")}</Label>
-            <Input
+            <PasswordInput
               id="password"
-              type="password"
               autoComplete="new-password"
               required
+              showLabel={tc("showPassword")}
+              hideLabel={tc("hidePassword")}
             />
           </div>
           <div className="flex flex-col gap-2">
             <Label htmlFor="confirm">{t("confirm")}</Label>
-            <Input
+            <PasswordInput
               id="confirm"
-              type="password"
               autoComplete="new-password"
               required
+              showLabel={tc("showPassword")}
+              hideLabel={tc("hidePassword")}
             />
           </div>
           <Button type="submit" size="lg" className="w-full">
