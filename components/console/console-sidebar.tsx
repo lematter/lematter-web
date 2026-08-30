@@ -21,7 +21,7 @@ import { useTranslations } from "next-intl";
 
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
-import { SidebarToggle, type SidebarMode } from "./shared";
+import { ProfileBar, SidebarToggle, type SidebarMode } from "./shared";
 
 type NavItem = {
   href: string;
@@ -150,6 +150,8 @@ export function ConsoleSidebar() {
           );
         })}
       </nav>
+
+      <ProfileBar collapsed={collapsed} />
     </aside>
   );
 }

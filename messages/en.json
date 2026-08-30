@@ -25,6 +25,11 @@
       "chat": "Chat",
       "lab": "Lab"
     },
+    "profile": {
+      "settings": "Settings",
+      "help": "Help",
+      "signOut": "Sign out"
+    },
     "nav": {
       "settings": "Settings"
     },
