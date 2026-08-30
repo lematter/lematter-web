@@ -1,21 +1,32 @@
 "use client";
 
 import Image from "next/image";
-import { FlaskConical, LifeBuoy, MessageSquare, Settings } from "lucide-react";
+import {
+  Brain,
+  FlaskConical,
+  MessagesSquare,
+  Plug,
+  Plus,
+  Puzzle,
+  Sparkles,
+} from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { Link, usePathname } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
 const items = [
-  { href: "/console/chat", key: "chat", icon: MessageSquare },
-  { href: "/console/lab", key: "lab", icon: FlaskConical },
-  { href: "/console/help", key: "help", icon: LifeBuoy },
-  { href: "/console/settings", key: "settings", icon: Settings },
+  { href: "/console/chat/new", key: "new", icon: Plus },
+  { href: "/console/chat/chats", key: "chats", icon: MessagesSquare },
+  { href: "/console/chat/connectors", key: "connectors", icon: Plug },
+  { href: "/console/chat/skills", key: "skills", icon: Sparkles },
+  { href: "/console/chat/memory", key: "memory", icon: Brain },
+  { href: "/console/chat/plugins", key: "plugins", icon: Puzzle },
 ] as const;
 
-export function ConsoleSidebar() {
-  const t = useTranslations("Console.nav");
+export function ChatSidebar() {
+  const t = useTranslations("Console.chat.nav");
+  const tMode = useTranslations("Console.mode");
   const tApp = useTranslations("App");
   const pathname = usePathname();
 
@@ -35,6 +46,17 @@ export function ConsoleSidebar() {
             priority
           />
           {tApp("brand")}
+        </Link>
+      </div>
+      <div className="p-3 pb-0">
+        <Link
+          href="/console/lab"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-3 bg-primary px-3 py-2.5 text-base font-medium text-white transition-colors hover:bg-primary/90"
+        >
+          <FlaskConical className="size-5" />
+          {tMode("lab")}
         </Link>
       </div>
       <nav className="flex flex-col gap-1 p-3">

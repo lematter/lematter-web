@@ -21,6 +21,10 @@
   "Console": {
     "title": "Console",
     "signOut": "Sign out",
+    "mode": {
+      "chat": "Chat mode",
+      "lab": "Lab mode"
+    },
     "nav": {
       "chat": "Chat",
       "lab": "Lab",
@@ -28,7 +32,33 @@
       "settings": "Settings"
     },
     "chat": {
-      "title": "Chat"
+      "title": "Chat",
+      "nav": {
+        "new": "New chat",
+        "chats": "Chats",
+        "connectors": "Connectors",
+        "skills": "Skills",
+        "memory": "Memory",
+        "plugins": "Plugins"
+      },
+      "new": {
+        "title": "New chat"
+      },
+      "chats": {
+        "title": "Chats"
+      },
+      "connectors": {
+        "title": "Connectors"
+      },
+      "skills": {
+        "title": "Skills"
+      },
+      "memory": {
+        "title": "Memory"
+      },
+      "plugins": {
+        "title": "Plugins"
+      }
     },
     "lab": {
       "title": "Lab"
